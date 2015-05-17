@@ -87,18 +87,14 @@ img {
 <li>Downloaded data and unzip the zip file, resulting a csv file.</li>
 </ol>
 <pre class="r"><code>URL &lt;- &quot;http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
-download.file(url = URL, destfile = &quot;Activity_monitoring_data.zip&quot;, method=&quot;curl&quot;)</code></pre>
-<pre><code>## Warning: running command 'curl &quot;http://d396qusza40orc.cloudfront.net/
-## repdata%2Fdata%2Factivity.zip&quot; -o &quot;Activity_monitoring_data.zip&quot;' had
-## status 127</code></pre>
-<pre><code>## Warning in download.file(url = URL, destfile =
-## &quot;Activity_monitoring_data.zip&quot;, : download had nonzero exit status</code></pre>
-<pre class="r"><code>unzip(&quot;Activity_monitoring_data.zip&quot;)</code></pre>
+Folder &lt;- &quot;C:/Users/Yu-Chen Wang/Box Sync/R/Coursera/RepData_PeerAssessment1/&quot;
+download.file(url = URL, destfile = paste0(Folder, &quot;Activity_monitoring_data.zip&quot;), method=&quot;auto&quot;)
+unzip(paste0(Folder, &quot;Activity_monitoring_data.zip&quot;))</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Loaded the csv file.</li>
 </ol>
 <p>I used <code>read.csv</code> to load the dataset and save it to the <code>activity</code> variable.</p>
-<pre class="r"><code>activity &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
+<pre class="r"><code>activity &lt;- read.csv(paste0(Folder, &quot;activity.csv&quot;))</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Explored the <code>activity</code> dataset.</li>
 </ol>
